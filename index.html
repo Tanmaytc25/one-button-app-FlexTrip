@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
+        <title> FlexTrip</title>
+        <style>
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e0f7fa;
+                text-align: center;
+                padding: 60px;
+            }
+
+            .container {
+                background: #ffffff;
+                padding: 40px;
+                border-radius: 17px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+            }
+
+            button {
+                padding: 20px 30px;
+                font-size: 20px;
+                background-color: #ff5722;
+                color: #ffffff;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #e64a19;
+
+            }
+
+            #statusMessage {
+                margin-top: 20px;
+                font-size: 18px;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1> Plan Your Next Destination</h1>
+            <p> Click The Button To Get To Know A Random Travel Destination For You! </p>
+            <button id="travelButton"> Get Travel Destination</button>
+            <p id="statusMessage"></p>
+        </div>
+
+        <script>
+            document.getElementById("travelButton").addEventListener("Click", () => {
+               const destinations = [
+                "Paris, France",
+                "Berlin, Germany",
+                "Salzburg, Austria",
+                "Prague, Czech Republic",
+                "Copenhagen, Denmark",
+                "Luxembourg city, Luxembourg",
+                "Rome, Italy",
+                "Amsterdam, Netherlands"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * destinations.length);
+            const destination = destinations[randomIndex];
+
+            const message = `How about visiting: ${destination}?`;
+            document.getElementById("statusMessage").textContent = message;
+
+            });
+        </script>
+    </body>
+</html>
